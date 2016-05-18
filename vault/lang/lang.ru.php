@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Russian language data (last modified: 2016.05.11).
+ * This file: Russian language data (last modified: 2016.05.14).
  */
 
 $phpMussel['Config']['lang']['bad_command'] = 'Извините, команда непонятна.';
@@ -36,7 +36,7 @@ $phpMussel['Config']['lang']['file'] = 'файл';
 $phpMussel['Config']['lang']['filesize_limit_exceeded'] = 'Размер файла превышает лимит';
 $phpMussel['Config']['lang']['filetype_blacklisted'] = 'Тип файла находится в черном списке';
 $phpMussel['Config']['lang']['finished'] = 'Готово';
-$phpMussel['Config']['lang']['generated_by'] = 'Генерируется';
+$phpMussel['Config']['lang']['generated_by'] = 'Генерируется от';
 $phpMussel['Config']['lang']['greylist_cleared'] = ' Серый список очищен.';
 $phpMussel['Config']['lang']['greylist_not_updated'] = ' Серый список не обновлён.';
 $phpMussel['Config']['lang']['greylist_updated'] = ' Серый список обновлён.';

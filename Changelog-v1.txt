@@ -135,6 +135,9 @@ entries will be deleted when those goals have been achieved.
   times faster than they did before.
   Refer github.com/Maikuolan/phpMussel/issues/91
 
+- [2016.05.18; Maikuolan]: Removed "compressor" as a possible value for
+  "$container".
+
 ======
 
 Changelog notes for versions < v1.0.0 can be found in the "Changelog-v0.txt"
