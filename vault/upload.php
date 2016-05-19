@@ -11,7 +11,7 @@
  * License: GNU/GPLv2
  * @see LICENSE.txt
  *
- * This file: Upload handler (last modified: 2016.04.24).
+ * This file: Upload handler (last modified: 2016.05.19).
  */
 
 /** Prevents execution from outside of phpMussel. */
@@ -237,13 +237,18 @@ if ($phpMussel['upload']['count'] > 0) {
                 }
 
                 /** Execute the scan! */
-                $r = $phpMussel['Scan'](
-                    $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']],
-                    true,
-                    true,
-                    0,
-                    $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
-                );
+                try {
+                    $r = $phpMussel['Scan'](
+                        $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']],
+                        true,
+                        true,
+                        0,
+                        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
+                    );
+                } catch (\Exception $e) {
+                    // trigger_error($e->getMessage(), E_USER_ERROR);
+                    die($e->getMessage());
+                }
 
             } elseif ($phpMussel['upload']['FilesData']['FileSet']['error'][$phpMussel['upload']['FilesData']['FileSet']['i']] === 1) {
                 $phpMussel['killdata'] .=
@@ -409,13 +414,18 @@ if ($phpMussel['upload']['count'] > 0) {
                 }
 
                 /** Execute the scan! */
-                $r = $phpMussel['Scan'](
-                    $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']],
-                    true,
-                    true,
-                    0,
-                    $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
-                );
+                try {
+                    $r = $phpMussel['Scan'](
+                        $phpMussel['upload']['FilesData']['FileSet']['tmp_name'][$phpMussel['upload']['FilesData']['FileSet']['i']],
+                        true,
+                        true,
+                        0,
+                        $phpMussel['upload']['FilesData']['FileSet']['name'][$phpMussel['upload']['FilesData']['FileSet']['i']]
+                    );
+                } catch (\Exception $e) {
+                    // trigger_error($e->getMessage(), E_USER_ERROR);
+                    die($e->getMessage());
+                }
 
             }
         }
